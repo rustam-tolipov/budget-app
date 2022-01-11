@@ -106,6 +106,7 @@ GEM
     nokogiri (1.13.0-x86_64-darwin)
       racc (~> 1.4)
     pg (1.2.3)
+    prettier (2.0.0)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -211,6 +212,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
+  prettier
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.4)

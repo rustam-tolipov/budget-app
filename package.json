@@ -14,6 +14,10 @@
   "devDependencies": {
     "@prettier/plugin-ruby": "^2.0.0",
     "prettier": "^2.5.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
     "webpack-dev-server": "^3"
   }
 }

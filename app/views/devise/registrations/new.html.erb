@@ -1,27 +1,25 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> <%= render "devise/shared/error_messages", resource: resource %>
-<div class="field">
-  <%= f.label :name %><br />
-  <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-</div>
 
-<div class="field">
-  <%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-</div>
+<section class="add-expenses">
+  <div class="add__amount">
+    <div class="add__title">Sign Up</div>
 
-<div class="field">
-  <%= f.label :password %> <% if @minimum_password_length %>
-  <em>(<%= @minimum_password_length %> characters minimum)</em>
-  <% end %><br />
-  <%= f.password_field :password, autocomplete: "new-password" %>
-</div>
-
-<div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-</div>
-
-<div class="actions"><%= f.submit "Sign up" %></div>
-<% end %> <%= render "devise/shared/links" %>
+    <div class="add__option">
+      <ion-icon name="person-outline"></ion-icon>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'option-text', placeholder: 'Name' %>
+    </div>
+    <div class="add__option">
+      <ion-icon name="mail-outline"></ion-icon>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'option-text', placeholder: 'Email' %>
+    </div>
+    <div class="add__option">
+      <ion-icon name="key-outline"></ion-icon>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'option-text', placeholder: 'Password' %>
+    </div>
+    <div class="add__option">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'option-text', placeholder: 'Confirm Password' %>
+    </div>
+  </div>
+  <%= f.button 'Sign Up', class: 'add__save' %><% end %> <%= render "devise/shared/links" %>
+</section>

@@ -1,2 +1,4 @@
 <h1>Hi</h1>
 <%= @user.name %>
+<!-- signout -->
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>

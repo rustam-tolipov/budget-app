@@ -1,0 +1,520 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+
+// WELCOME
+// WELCOME ADD
+
+
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8fd;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 2.8rem;
+  border-radius: 50%;
+  background-color: #f7f8fd;
+  border: 0.2rem solid yellow;
+  margin-right: 1rem;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-text p {
+  margin-bottom: 0;
+}
+
+.user-text__welcome {
+  color: #5e5e61;
+}
+
+.user-text__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.settings-button {
+  font-size: 2rem;
+  color: #9598a7;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 20%;
+}
+
+.credit-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #6078ea 0%, #17ead9 100%);
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.credit-card__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.credit-card__top__text {
+  font-size: 1.5rem;
+}
+
+.credit-card__top__amount {
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.credit-card__bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+.arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: rgba(77, 148, 240, 0.445);
+  border-radius: 50%;
+  margin-right: 1rem;
+  padding: 0.3rem;
+}
+
+.income {
+  color: #12e712;
+}
+
+.expenses {
+  color: #c29898;
+}
+
+.bottom__text {
+  font-size: 1.5rem;
+  color: #17ead9;
+}
+
+.bottom__amount {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.tranactions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.title__text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333335;
+}
+
+.title__date {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #505052;
+}
+
+.view-all {
+  font-size: 1.5rem;
+  color: #9598a7;
+  cursor: pointer;
+  padding-right: 1rem;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.1rem;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.transaction-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.transaction-img {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 1.2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dfec51 0%, #a3df33 100%);
+  margin-right: 1rem;
+  color: #fff;
+}
+
+.food {
+  background: linear-gradient(135deg, #dfec51 0%, #a3df33 100%);
+}
+
+.shopping {
+  background: linear-gradient(135deg, #889aeb 0%, #3d639b 100%);
+}
+
+.entertainment {
+  background: linear-gradient(135deg, #f2d50f 0%, #da0641 100%);
+}
+
+.travel {
+  background: linear-gradient(135deg, #75798b 0%, #3d639b 100%);
+}
+
+.gym {
+  background: linear-gradient(135deg, #e2ddba 0%, #aa6a7c 100%);
+}
+
+.trash {
+  background: linear-gradient(135deg, #f2d50f 0%, #da0641 100%);
+}
+
+.transaction-name__text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333335;
+}
+
+.transaction-amount__text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #335;
+}
+
+.transaction-amount__date {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #9598a7;
+  float: right;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 2rem;
+  position: relative;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 20%;
+  margin-top: auto;
+}
+
+.menu-button {
+  font-size: 2.5rem;
+  color: #9598a7;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 20%;
+  margin-left: 3rem;
+}
+
+.add-button {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ff57b9 0%, #a704fd 100%);
+  border-radius: 50%;
+}
+
+.show-button {
+  font-size: 3rem;
+  color: #9598a7;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 20%;
+  margin-right: 3rem;
+}
+
+.details {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f8fd;
+}
+
+.details-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.details-button {
+  font-size: 2.5rem;
+  color: #9598a7;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 20%;
+}
+
+.details-title__text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333335;
+  margin-right: auto;
+  padding-left: 2rem;
+}
+
+.selections {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  margin: 2rem;
+  border-radius: 1rem;
+}
+
+.selection {
+  font-size: 1.5rem;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 1.5rem;
+  width: 50%;
+  border-radius: 1.5rem;
+  border: none;
+}
+
+.selection:hover {
+  background-color: #f7f8fd;
+  border: none;
+}
+
+.selection:focus {
+  color: #fff;
+  background: linear-gradient(135deg, #3f97ff 0%, #62ffec 100%);
+  outline: none;
+}
+
+.add-expenses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+  background-color: #f7f8fd;
+}
+
+.add__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333335;
+}
+
+.add__amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+  height: 80%;
+}
+
+.add__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0a160d;
+  padding-bottom: 2rem;
+}
+
+.add__amount-input {
+  width: 70%;
+  padding: 1rem;
+  border: none;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #64e085;
+  border-radius: 10rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.add__option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0rem 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 90%;
+}
+
+.add__option > ion-icon {
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  background-color: #64e085;
+  border-radius: 30%;
+  margin: 1.5rem 0rem;
+}
+
+.option-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  border: none;
+  padding: 1.5rem;
+  outline: none;
+}
+
+.option-category {
+  color: #777;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  border: none;
+  padding: 1.5rem;
+  outline: none;
+}
+
+::placeholder {
+  color: #777;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+.option-category::-webkit-calendar-picker-indicator {
+  background-color: #fff;
+}
+
+.option-category::-webkit-calendar-picker-indicator {
+  display: none;
+}
+::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.add__button {
+  position: absolute;
+  bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.add__save {
+  background: rgb(104, 226, 130);
+  background: linear-gradient(90deg, rgba(104, 226, 130, 1) 20%, rgba(80, 219, 144, 1) 53%, rgba(58, 211, 154, 1) 78%);
+  border: none;
+  color: #f7f8fd;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 8rem;
+  cursor: pointer;
+}

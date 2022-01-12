@@ -1,18 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 * {
   margin: 0;
   padding: 0;
@@ -31,17 +16,14 @@ p {
   margin-bottom: 0;
 }
 
-
 // WELCOME
 // WELCOME ADD
-
-
 
 .home {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f7f8fd;
+  background-color: #f7f8fd important;
 }
 
 .user-container {
@@ -238,28 +220,56 @@ p {
   color: #fff;
 }
 
-.food {
+.fast-food {
   background: linear-gradient(135deg, #dfec51 0%, #a3df33 100%);
 }
 
-.shopping {
+.bag {
   background: linear-gradient(135deg, #889aeb 0%, #3d639b 100%);
 }
 
-.entertainment {
+.ticket {
   background: linear-gradient(135deg, #f2d50f 0%, #da0641 100%);
 }
 
-.travel {
+.airplane {
   background: linear-gradient(135deg, #75798b 0%, #3d639b 100%);
 }
 
-.gym {
+.barbell {
   background: linear-gradient(135deg, #e2ddba 0%, #aa6a7c 100%);
 }
 
 .trash {
   background: linear-gradient(135deg, #f2d50f 0%, #da0641 100%);
+}
+
+.car {
+  background: linear-gradient(135deg, #fad961 0%, #f76b1c 100%);
+}
+
+.call {
+  background: linear-gradient(135deg, #ff57b9 0%, #a704fd 100%);
+}
+
+.bus {
+  background: linear-gradient(135deg, #fad961 0%, #f76b1c 100%);
+}
+
+.game-controller {
+  background: linear-gradient(135deg, #0ff0b3 0%, #036ed9 100%);
+}
+
+.house {
+  background: linear-gradient(135deg, #e3e3e3 0%, #5d6874 100%);
+}
+
+.shirt {
+  background: linear-gradient(135deg, #fcdf8a 0%, #f38381 100%);
+}
+
+.bandage {
+  background: linear-gradient(135deg, #f5515f 0%, #a1051d 100%);
 }
 
 .transaction-name__text {
@@ -438,9 +448,6 @@ p {
 }
 
 .add__option {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   padding: 0rem 2rem;
   background-color: #fff;
   border-radius: 1rem;
@@ -460,17 +467,17 @@ p {
 .option-text {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-left: 2rem;
   border: none;
   padding: 1.5rem;
   outline: none;
+  background: #fff;
+  color: #777;
 }
 
 .option-category {
   color: #777;
   font-size: 1.5rem;
   font-weight: 700;
-  margin-left: 2rem;
   border: none;
   padding: 1.5rem;
   outline: none;
@@ -517,4 +524,43 @@ input:-webkit-autofill:active {
   font-weight: 700;
   padding: 1rem 8rem;
   cursor: pointer;
+}
+
+.category-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.category-title > ion-icon {
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  background-color: #64e085;
+  border-radius: 30%;
+  margin: 1.5rem 0rem;
+}
+
+.icons {
+  display: grid;
+  padding-bottom: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.icons > .transaction-img {
+  margin-right: unset;
+}
+
+.icons > input {
+  display: none;
+}
+
+ion-icon:hover {
+  color: #fff;
+  background-color: #64e085;
+  border-radius: 30%;
+  transition: 0.5s;
 }

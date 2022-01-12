@@ -1,0 +1,67 @@
+<!-- display group name -->
+<section class="home">
+  <div class="user-container">
+    <div class="user-info">
+      <img src="tom.jpeg" alt="user logo" class="avatar" />
+      <div class="user-text">
+        <p class="user-text__welcome">Welcome!</p>
+        <p class="user-text__name">Tom Cruise</p>
+      </div>
+    </div>
+
+    <ion-icon name="settings" class="settings-button"></ion-icon>
+  </div>
+
+  <div class="credit-card">
+    <div class="credit-card__top">
+      <div class="credit-card__top">
+        <p class="credit-card__top__text">Total Balance</p>
+        <p class="credit-card__top__amount">$ 4000.00</p>
+      </div>
+    </div>
+    <div class="credit-card__bottom">
+      <div class="bottom-container">
+        <ion-icon name="arrow-down-outline" class="income arrow"></ion-icon>
+        <div class="info">
+          <p class="bottom__text">Income</p>
+          <p class="bottom__amount">4000.00</p>
+        </div>
+      </div>
+      <div class="bottom-container">
+        <ion-icon name="arrow-up-outline" class="expenses arrow"></ion-icon>
+        <div class="info">
+          <p class="bottom__text">Expenses</p>
+          <p class="bottom__amount">4000.00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tranactions">
+    <div class="title">
+      <p class="title__text">Transactions</p>
+      <p class="view-all">View All</p>
+    </div>
+    <ul class="transactions-list">
+      <% @groups.each do |group| %>
+      <li class="item">
+        <div class="transaction-name">
+          <ion-icon name="<%= group.icon %>-outline" class="transaction-img <%= group.icon %>"></ion-icon>
+          <p class="transaction-name__text"><%= group.name %></p>
+        </div>
+        <div class="transaction-amount">
+          <p class="transaction-amount__text">-$500.00</p>
+          <p class="transaction-amount__date">Today</p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="options">
+    <ion-icon name="grid" class="menu-button"></ion-icon>
+    <%= link_to new_group_path do %>
+    <ion-icon name="add-outline" class="add-button"></ion-icon>
+    <% end %>
+    <ion-icon name="filter-circle" class="show-button"></ion-icon>
+  </div>
+</section>

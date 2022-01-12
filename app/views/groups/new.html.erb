@@ -1,0 +1,61 @@
+<%= form_for(@group, :url => groups_path, :html => { :method => :post }) do |f| %>
+
+<section class="add-expenses">
+  <div class="add__amount">
+    <div class="add__title">Add Group</div>
+    <div class="add__option category-title">
+      <ion-icon name="clipboard-outline"></ion-icon>
+      <%= f.text_field :name, :placeholder => "Name", :class => "option-text" %>
+    </div>
+
+    <div class="add__option category">
+      <div class="category-title">
+        <ion-icon name="options"></ion-icon>
+        <p class="option-category">Category</p>
+      </div>
+      <div class="icons">
+        <%= f.radio_button :icon, "fast-food-outline" %> <%= f.label :icon, class: "fast-food-outline", :value => "fast-food-outline" do%>
+        <ion-icon name="fast-food-outline" class="transaction-img food" value="fast-food-outline"></ion-icon>
+        <% end %> <%= f.radio_button :icon, "bag" %> <%= f.label :icon, :value => "bag" do%>
+        <ion-icon name="bag" class="transaction-img bag" value="bag"></ion-icon>
+        <% end %> <%= f.radio_button :icon, "ticket" %> <%= f.label :icon, :value => "ticket" do%>
+        <ion-icon name="ticket" class="transaction-img ticket" value="ticket"></ion-icon>
+        <% end %> <%= f.radio_button :icon, "airplane" %> <%= f.label :icon, :value => "airplane" do%>
+        <ion-icon name="airplane" class="transaction-img airplane" value="airplane"></ion-icon>
+        <% end %> <%= f.radio_button :icon, "barbell" %> <%= f.label :icon, :value => "barbell" do%>
+        <ion-icon name="barbell" class="transaction-img barbell" value="barbell"></ion-icon>
+        <% end %>
+        <!-- car -->
+        <%= f.radio_button :icon, "car" %> <%= f.label :icon, :value => "car" do%>
+        <ion-icon name="car" class="transaction-img car" value="car"></ion-icon>
+        <% end %>
+        <!-- call -->
+        <%= f.radio_button :icon, "call" %> <%= f.label :icon, :value => "call" do%>
+        <ion-icon name="call" class="transaction-img call" value="call"></ion-icon>
+        <% end %>
+        <!-- bus -->
+        <%= f.radio_button :icon, "bus" %> <%= f.label :icon, :value => "bus" do%>
+        <ion-icon name="bus" class="transaction-img bus" value="bus"></ion-icon>
+        <% end %>
+        <!-- game-controller -->
+        <%= f.radio_button :icon, "game-controller" %> <%= f.label :icon, :value => "game-controller" do%>
+        <ion-icon name="game-controller" class="transaction-img game-controller" value="game-controller"></ion-icon>
+        <% end %>
+        <!-- home -->
+        <%= f.radio_button :icon, "home" %> <%= f.label :icon, :value => "home" do%>
+        <ion-icon name="home" class="transaction-img house" value="home"></ion-icon>
+        <% end %>
+        <!-- shirt -->
+        <%= f.radio_button :icon, "shirt" %> <%= f.label :icon, :value => "shirt" do%>
+        <ion-icon name="shirt" class="transaction-img shirt" value="shirt"></ion-icon>
+        <% end %>
+        <!-- bandage -->
+        <%= f.radio_button :icon, "bandage" %> <%= f.label :icon, :value => "bandage" do%>
+        <ion-icon name="bandage" class="transaction-img bandage" value="bandage"></ion-icon>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="add__button"><%= button_to "Save", groups_path, :method => :post, :class => "add__save" %></div>
+</section>
+<% end %>

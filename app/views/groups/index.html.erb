@@ -2,7 +2,8 @@
 <section class="home">
   <div class="user-container">
     <div class="user-info">
-      <%= image_tag "tom.jpeg", :class => "avatar" %>
+      <%= image_tag avatar_url(current_user), :class => "avatar" %>
+
       <div class="user-text">
         <p class="user-text__welcome">Welcome!</p>
         <p class="user-text__name"><%= current_user.name %></p>
@@ -13,12 +14,26 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content"></div>
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, consequuntur! Earum optio a officia officiis. Amet, officiis, eveniet ex magni necessitatibus fugit facilis vero delectus obcaecati ab eius libero! Nemo.</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
     </div>
-
+    <!-- link to devise user edit -->
+    <%= link_to edit_user_registration_path do %>
     <ion-icon name="settings" class="settings-button"></ion-icon>
+    <% end %>
   </div>
 
   <div class="credit-card">
@@ -31,7 +46,7 @@
     </div>
     <div class="credit-card__bottom">
       <div class="bottom-container">
-        <ion-icon name="arrow-down-outline" class="income arrow" data-toggle="modal" data-target="#exampleModal"></ion-icon>
+        <ion-icon name="arrow-down-outline" class="income arrow"></ion-icon>
         <div class="info">
           <p class="bottom__text">Most</p>
           <p class="bottom__amount">$ <%= current_user.entities.select { |entity| entity.amount == current_user.entities.max_by(&:amount).amount }.first.amount %>.00</p>
@@ -72,6 +87,6 @@
     <%= link_to new_group_path do %>
     <ion-icon name="add-outline" class="add-button"></ion-icon>
     <% end %>
-    <ion-icon name="alert-circle" class="show-button"></ion-icon>
+    <ion-icon name="alert-circle" class="show-button" data-toggle="modal" data-target="#exampleModal"></ion-icon>
   </div>
 </section>

@@ -7,7 +7,7 @@
         <ion-icon name="arrow-back" class="settings-button" data-dismiss="modal" aria-label="Close"></ion-icon>
       </div>
       <div class="modal-body">If you log out, you will be logged out of all your devices. 
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>      </div>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger'%></div>
     </div>
   </div>
 </div>

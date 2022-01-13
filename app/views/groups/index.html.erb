@@ -44,7 +44,11 @@
         <div class="info">
           <p class="bottom__text">Expenses</p>
           <p class="bottom__amount">
-            <%= @groups.last.total_amount.to_s.gsub(/\d(?=(\d{3})+\.)/, '\&,') %>.00
+            <% if @groups.last.present? %>
+            $ <%= @groups.last.total_amount %>.00
+            <% else %>
+            $ 0.00
+            <% end %>
           </p>
         </div>
       </div>

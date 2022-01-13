@@ -4,7 +4,7 @@ class Group < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :icon, presence: true
 
-  def last_updated_at_amount
-    self.group.entities.maximum(:updated_at)
+  def most_recent_group
+    self.entities.maximum(:created_at)
   end
 end

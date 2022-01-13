@@ -1,5 +1,3 @@
-@import "bootstrap";
-
 * {
   margin: 0;
   padding: 0;
@@ -161,7 +159,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: 0rem 2rem;
+  margin-bottom: -2rem;
+  overflow: hidden;
 }
 
 .title {
@@ -194,10 +194,31 @@ a {
 .transactions-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 1.5rem;
-  padding: 0.1rem;
+  padding: 2rem;
   list-style: none;
+  overflow: scroll;
+  margin-right: -2rem;
+  margin-left: -2rem;
+}
+
+::-webkit-scrollbar {
+  width: 0rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f7f8fd;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f7f8fd
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f7f8fd;
 }
 
 .item {
@@ -303,12 +324,12 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
   padding: 2rem;
   position: relative;
   border-top-left-radius: 20%;
   border-top-right-radius: 20%;
   margin-top: auto;
+  background-color: #fff;
 }
 
 .menu-button {

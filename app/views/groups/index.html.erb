@@ -2,10 +2,10 @@
 <section class="home">
   <div class="user-container">
     <div class="user-info">
-      <img src="tom.jpeg" alt="user logo" class="avatar" />
+      <%= image_tag "tom.jpeg", :class => "avatar" %>
       <div class="user-text">
         <p class="user-text__welcome">Welcome!</p>
-        <p class="user-text__name">Tom Cruise</p>
+        <p class="user-text__name"><%= current_user.name %></p>
       </div>
     </div>
 
@@ -33,23 +33,15 @@
       <div class="bottom-container">
         <ion-icon name="arrow-down-outline" class="income arrow" data-toggle="modal" data-target="#exampleModal"></ion-icon>
         <div class="info">
-          <p class="bottom__text">Income</p>
-          <p class="bottom__amount">
-            $ 4,000.00
-          </p>
+          <p class="bottom__text">Most</p>
+          <p class="bottom__amount">$ <%= current_user.entities.select { |entity| entity.amount == current_user.entities.max_by(&:amount).amount }.first.amount %>.00</p>
         </div>
       </div>
       <div class="bottom-container">
         <ion-icon name="arrow-up-outline" class="expenses arrow"></ion-icon>
         <div class="info">
-          <p class="bottom__text">Expenses</p>
-          <p class="bottom__amount">
-            <% if @groups.last.present? %>
-            $ <%= @groups.last.total_amount %>.00
-            <% else %>
-            $ 0.00
-            <% end %>
-          </p>
+          <p class="bottom__text">Last</p>
+          <p class="bottom__amount"><% if @groups.last.present? %> $ <%= @groups.last.total_amount %>.00 <% else %> $ 0.00 <% end %></p>
         </div>
       </div>
     </div>
@@ -69,7 +61,7 @@
         </div>
         <div class="transaction-amount">
           <p class="transaction-amount__text">-$<%= group.total_amount %></p>
-          <p class="transaction-amount__date">Today</p>
+          <p class="transaction-amount__date"><%= group.created_at.strftime("%a") %></p>
         </div>
       </li>
       <% end %>

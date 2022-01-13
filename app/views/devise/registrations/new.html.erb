@@ -4,19 +4,19 @@
   <div class="add__amount">
     <div class="add__title">Sign Up</div>
 
-    <div class="add__option">
+    <div class="add__option category-title">
       <ion-icon name="person-outline"></ion-icon>
       <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'option-text', placeholder: 'Name' %>
     </div>
-    <div class="add__option">
+    <div class="add__option category-title">
       <ion-icon name="mail-outline"></ion-icon>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'option-text', placeholder: 'Email' %>
     </div>
-    <div class="add__option">
+    <div class="add__option category-title">
       <ion-icon name="key-outline"></ion-icon>
       <%= f.password_field :password, autocomplete: "new-password", class: 'option-text', placeholder: 'Password' %>
     </div>
-    <div class="add__option">
+    <div class="add__option category-title">
       <ion-icon name="lock-closed-outline"></ion-icon>
       <%= f.password_field :password, autocomplete: "new-password", class: 'option-text', placeholder: 'Confirm Password' %>
     </div>

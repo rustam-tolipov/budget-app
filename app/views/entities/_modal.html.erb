@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete entity</h5>
+        <ion-icon name="arrow-back" class="settings-button" data-dismiss="modal" aria-label="Close"></ion-icon>
+      </div>
+      <div class="modal-body">
+        <% @entities.each do |entity| %>
+        <li class="item">
+          <div class="transaction-name">
+            <%= link_to group_entity_path(@group, entity), method: :delete do %>
+            <ion-icon name="trash-outline" class="transaction-img <%= @group.icon %>" data-toggle="modal" data-target="#DeleteModal"></ion-icon>
+            <% end %>
+            <p class="transaction-name__text"><%= entity.name %></p>
+          </div>
+          <div class="transaction-amount">
+            <p class="transaction-amount__text">-$<%= entity.amount %></p>
+          </div>
+        </li>
+        <br />
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,11 @@
   </div>
 </section>
 <div class="slide">
-  <a href="../index.html" class="skip__link">Skip</a>
+  <% if current_user.present? %>
+  <%= link_to 'Skip', groups_path, class: 'skip__link' %>
+  <% else %>
+  <%= link_to 'Skip', new_user_session_path, class: 'skip__link' %>
+  <% end %>
   <div class="dots">
     <span> . </span>
     <span> . </span>

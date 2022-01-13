@@ -62,7 +62,7 @@ gem 'prettier'
 gem 'devise'
 
 # IonIcons
-gem "font-ionicons-rails"
+gem 'font-ionicons-rails'
 
 # Bootstrap
 gem 'bootstrap', '~> 5.1.3'
@@ -70,5 +70,5 @@ gem 'bootstrap', '~> 5.1.3'
 # Jquery-rails
 gem 'jquery-rails'
 
-
-
+# CanCan
+gem 'cancancan'

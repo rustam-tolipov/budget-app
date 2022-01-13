@@ -1,9 +1,10 @@
-@import 'bootstrap';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+@import "bootstrap";
 
 html {
   font-size: 62.5%;
@@ -11,6 +12,39 @@ html {
 
 body {
   font-family: 'Nunito', sans-serif;
+  position: relative;
+}
+
+.alert,
+.error_explanation {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  animation-name: alert;
+  animation-duration: 0.1s;
+}
+
+@keyframes alert {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 p {
@@ -23,13 +57,122 @@ a {
 }
 
 // WELCOME
+.welcome {
+  background-color: #f7f8fd;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: #959597;
+}
+
+.welcome__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  padding: 2rem;
+  padding-top: 5rem;
+}
+
+.welcome-image {
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+}
+
+.welcome-illustration {
+  width: 100%;
+  height: 100%;
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.welcome-text__title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #5e5e61;
+}
+
+.welcome-text__description {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.slide {
+  height: 5vh;
+  background-color: #f7f8fd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.slide a {
+  color: #959597;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.get-started {
+  background-color: #f7f8fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.get-started button {
+  background: rgb(104, 226, 130);
+  background: linear-gradient(90deg, rgba(104, 226, 130, 1) 20%, rgba(80, 219, 144, 1) 53%, rgba(58, 211, 154, 1) 78%);
+  border: none;
+  color: #f7f8fd;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 8rem;
+  cursor: pointer;
+}
 // WELCOME ADD
+
+.modal-body {
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+  display: none;
+}
+
+.custom-file-input::before {
+  display: none;
+}
+
+.custom-file-input:hover::before {
+  border-color: black;
+  display: none;
+}
+
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  display: none;
+}
 
 .home {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f7f8fd important;
+  background-color: #f7f8fd;
 }
 
 .user-container {
@@ -93,7 +236,7 @@ a {
   border-radius: 30px;
   background: linear-gradient(135deg, #6078ea 0%, #17ead9 100%);
   color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 .credit-card__top {
@@ -159,8 +302,8 @@ a {
 .tranactions {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0rem 2rem;
+  height: 100%;
+  padding: 0 2rem;
   margin-bottom: -2rem;
   overflow: hidden;
 }
@@ -204,7 +347,7 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 0rem;
+  width: 0;
 }
 
 /* Track */
@@ -214,7 +357,7 @@ a {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #f7f8fd
+  background: #f7f8fd;
 }
 
 /* Handle on hover */
@@ -230,7 +373,7 @@ a {
   padding: 1.5rem 2rem;
   background-color: #fff;
   border-radius: 1.5rem;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 
 .transaction-name {
@@ -444,7 +587,8 @@ a {
 .add__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #333335;
+  color: #0a160d;
+  padding-bottom: 2rem;
 }
 
 .add__amount {
@@ -455,13 +599,6 @@ a {
   width: 100%;
   gap: 2rem;
   height: 80%;
-}
-
-.add__title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #0a160d;
-  padding-bottom: 2rem;
 }
 
 .add__amount-input {
@@ -477,20 +614,18 @@ a {
 }
 
 .add__option {
-  padding: 0rem 2rem;
+  padding: 0 2rem;
   background-color: #fff;
   border-radius: 1rem;
   width: 90%;
 }
 
-.add__option > ion-icon {
-  font-size: 1.5rem;
-  color: #fff;
-  padding: 0.5rem;
-  margin-right: 1rem;
-  background-color: #64e085;
-  border-radius: 30%;
-  margin: 1.5rem 0rem;
+.sign {
+  display: flex;
+}
+
+.add__description {
+  height: 30%;
 }
 
 .option-text {
@@ -503,6 +638,20 @@ a {
   color: #777;
 }
 
+.add__description > .option-text {
+  width: 100%;
+}
+
+.add__option > ion-icon {
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 1.5rem 0;
+  margin-right: 1rem;
+  background-color: #64e085;
+  border-radius: 30%;
+}
+
 .option-category {
   color: #777;
   font-size: 1.5rem;
@@ -512,25 +661,8 @@ a {
   outline: none;
 }
 
-::placeholder {
-  color: #777;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px white inset;
-}
-
 .option-category::-webkit-calendar-picker-indicator {
   background-color: #fff;
-}
-
-.option-category::-webkit-calendar-picker-indicator {
-  display: none;
-}
-::-webkit-calendar-picker-indicator {
   display: none;
 }
 
@@ -564,10 +696,10 @@ input:-webkit-autofill:active {
   font-size: 1.5rem;
   color: #fff;
   padding: 0.5rem;
+  margin: 1.5rem 0;
   margin-right: 1rem;
   background-color: #64e085;
   border-radius: 30%;
-  margin: 1.5rem 0rem;
 }
 
 .icons {
@@ -592,4 +724,15 @@ ion-icon:hover {
   background-color: #64e085;
   border-radius: 30%;
   transition: 0.5s;
+}
+
+::placeholder {
+  color: #777;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }

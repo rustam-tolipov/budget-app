@@ -12,6 +12,10 @@
       <ion-icon name="clipboard-outline"></ion-icon>
       <%= f.date_field :date, :class => "option-text" %>
     </div>
+    <div class="add__option category-title add__description">
+      <ion-icon name="clipboard-outline"></ion-icon>
+      <%= f.text_area :description, :placeholder => "Description", :class => "option-text" %>
+    </div>
   </div>
   <div class="add__button"><%= button_to "Save", group_entities_path, :method => :post, :class => "add__save" %></div>
 </section>

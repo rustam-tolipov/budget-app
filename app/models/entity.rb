@@ -7,10 +7,8 @@ class Entity < ApplicationRecord
 
   after_save :update_groups_total_amount
   after_save :update_users_total_expenses
-
-  def last_created_at_amount
-    self.group.entities.maximum(:created_at)
-  end
+  after_destroy :update_users_total_expenses
+  after_destroy :update_groups_total_amount
 
   private
 

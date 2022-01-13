@@ -4,27 +4,22 @@
     <ion-icon name="arrow-back" class="settings-button"></ion-icon>
     <% end %>
     <h1 class="details-title__text">Transactions</h1>
-    <a href="settings.html">
-      <ion-icon name="options" class="settings-button"></ion-icon>
-    </a>
+    <ion-icon name="options" class="settings-button"></ion-icon>
   </div>
   <div class="selections">
-    <button type="button" class="selection income">Income</button>
-    <button type="button" class="selection expenses">Expenses</button>
+    <button type="button" class="selection income">
+      <!-- delete group -->
+      <%= link_to group_path(@group), method: :delete do %> Delete Group <% end %>
+    </button>
+    <button type="button" class="selection expenses" data-toggle="modal" data-target="#DeleteModal">Expenses</button>
   </div>
   <div class="tranactions">
     <div class="title">
-      <p class="title__date">
-        <% if @group.entities.present? %>
-        <%= @group.entities.last.created_at.strftime("%b %d %Y") %>
-        <% else %>
-        <%= "No Entity added yet" %>
-        <% end %>
-      </p>
+      <p class="title__date"><% if @group.entities.present? %> <%= @group.entities.last.created_at.strftime("%b %d %Y") %> <% else %> <%= "No Entity added yet" %> <% end %></p>
       <p class="view-all">-<%= @group.total_amount %></p>
     </div>
     <ul class="transactions-list">
-      <% @entities.each do |entity| %>
+      <%= render 'modal' %> <% @entities.each do |entity| %>
       <li class="item">
         <div class="transaction-name">
           <ion-icon name="<%= @group.icon %>" class="transaction-img <%= @group.icon %>"></ion-icon>

@@ -1,0 +1,45 @@
+<section class="details">
+  <div class="details-title">
+    <%= link_to groups_path do %>
+    <ion-icon name="arrow-back" class="settings-button"></ion-icon>
+    <% end %>
+    <h1 class="details-title__text">Transactions</h1>
+    <a href="settings.html">
+      <ion-icon name="options" class="settings-button"></ion-icon>
+    </a>
+  </div>
+  <div class="selections">
+    <button type="button" class="selection income">Income</button>
+    <button type="button" class="selection expenses">Expenses</button>
+  </div>
+  <div class="tranactions">
+    <div class="title">
+      <p class="title__date">
+        <% if @group.entities.present? %>
+        <%= @group.entities.last.created_at.strftime("%b %d %Y") %>
+        <% else %>
+        <%= "No Entity added yet" %>
+        <% end %>
+      </p>
+      <p class="view-all">-<%= @group.total_amount %></p>
+    </div>
+    <ul class="transactions-list">
+      <% @entities.each do |entity| %>
+      <li class="item">
+        <div class="transaction-name">
+          <ion-icon name="<%= @group.icon %>" class="transaction-img <%= @group.icon %>"></ion-icon>
+          <p class="transaction-name__text"><%= entity.name %></p>
+        </div>
+        <div class="transaction-amount">
+          <p class="transaction-amount__text">-$<%= entity.amount %></p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="options">
+    <%= link_to new_group_entity_path do %>
+    <ion-icon name="add-outline" class="add-button"></ion-icon>
+    <% end %>
+  </div>
+</section>

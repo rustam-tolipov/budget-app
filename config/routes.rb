@@ -16,9 +16,9 @@ Rails.application.routes.draw do
   # end
 
   resources :welcome, only: %i[index info start]
-  resources :users, only: [:show]
+  resources :users, only: %i[show income update destroy]
 
   resources :groups, only: %i[index show new create destroy] do
-    resources :group_users, only: %i[create destroy]
+    resources :entities, only: %i[index show new create destroy]
   end
 end

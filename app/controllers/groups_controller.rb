@@ -1,10 +1,8 @@
 class GroupsController < ApplicationController
   def index
     @groups = Group.all
-  end
-
-  def show
-    @group = Group.find(params[:id])
+    @entities = current_user.entities.where(group_id: params[:group_id])
+    current_user.total_expenses = current_user.entities.sum(:amount)
   end
 
   def new

@@ -1,0 +1,18 @@
+<%= form_for(@entity, :url => group_entities_path, :html => { :method => :post }) do |f| %>
+
+<section class="add-expenses">
+  <div class="add__amount">
+    <div class="add__title">Add Group</div>
+    <%= f.number_field :amount, :placeholder => "Amount", :class => "add__amount-input", :id => "amount", :placeholder => "$0", :min => 0, :step => 0.01 %>
+    <div class="add__option category-title">
+      <ion-icon name="clipboard-outline"></ion-icon>
+      <%= f.text_field :name, :placeholder => "Name", :class => "option-text" %>
+    </div>
+    <div class="add__option category-title">
+      <ion-icon name="clipboard-outline"></ion-icon>
+      <%= f.date_field :date, :class => "option-text" %>
+    </div>
+  </div>
+  <div class="add__button"><%= button_to "Save", group_entities_path, :method => :post, :class => "add__save" %></div>
+</section>
+<% end %>

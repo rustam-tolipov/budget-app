@@ -9,29 +9,43 @@
       </div>
     </div>
 
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content"></div>
+      </div>
+    </div>
+
     <ion-icon name="settings" class="settings-button"></ion-icon>
   </div>
 
   <div class="credit-card">
     <div class="credit-card__top">
       <div class="credit-card__top">
-        <p class="credit-card__top__text">Total Balance</p>
-        <p class="credit-card__top__amount">$ 4000.00</p>
+        <p class="credit-card__top__text">Total Expenses</p>
+        <!-- last_updated_at_amount -->
+        <p class="credit-card__top__amount">$ <%= current_user.total_expenses.to_s.gsub(/\d(?=(\d{3})+\.)/, '\&,') %>.00</p>
       </div>
     </div>
     <div class="credit-card__bottom">
       <div class="bottom-container">
-        <ion-icon name="arrow-down-outline" class="income arrow"></ion-icon>
+        <ion-icon name="arrow-down-outline" class="income arrow" data-toggle="modal" data-target="#exampleModal"></ion-icon>
         <div class="info">
           <p class="bottom__text">Income</p>
-          <p class="bottom__amount">4000.00</p>
+          <p class="bottom__amount">
+            $ 4,000.00
+          </p>
         </div>
       </div>
       <div class="bottom-container">
         <ion-icon name="arrow-up-outline" class="expenses arrow"></ion-icon>
         <div class="info">
           <p class="bottom__text">Expenses</p>
-          <p class="bottom__amount">4000.00</p>
+          <p class="bottom__amount">
+            <%= @groups.last.total_amount.to_s.gsub(/\d(?=(\d{3})+\.)/, '\&,') %>.00
+          </p>
         </div>
       </div>
     </div>
@@ -46,11 +60,11 @@
       <% @groups.each do |group| %>
       <li class="item">
         <div class="transaction-name">
-          <ion-icon name="<%= group.icon %>-outline" class="transaction-img <%= group.icon %>"></ion-icon>
-          <p class="transaction-name__text"><%= group.name %></p>
+          <ion-icon name="<%= group.icon %>" class="transaction-img <%= group.icon %>"></ion-icon>
+          <p class="transaction-name__text"><%= link_to group.name, group_entities_path(group) %></p>
         </div>
         <div class="transaction-amount">
-          <p class="transaction-amount__text">-$500.00</p>
+          <p class="transaction-amount__text">-$<%= group.total_amount %></p>
           <p class="transaction-amount__date">Today</p>
         </div>
       </li>
@@ -62,6 +76,6 @@
     <%= link_to new_group_path do %>
     <ion-icon name="add-outline" class="add-button"></ion-icon>
     <% end %>
-    <ion-icon name="filter-circle" class="show-button"></ion-icon>
+    <ion-icon name="alert-circle" class="show-button"></ion-icon>
   </div>
 </section>

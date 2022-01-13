@@ -11,8 +11,7 @@
     </div>
 
     <!-- render modal -->
-    <%= render 'modal' %>
-    <%= render 'logout' %>
+    <%= render 'modal' %> <%= render 'logout' %>
 
     <!-- link to devise user edit -->
     <%= link_to edit_user_registration_path do %>
@@ -55,7 +54,7 @@
       <li class="item">
         <div class="transaction-name">
           <ion-icon name="<%= group.icon %>" class="transaction-img <%= group.icon %>"></ion-icon>
-          <p class="transaction-name__text"><%= link_to group.name, group_entities_path(group) %></p>
+          <p class="transaction-name__text"><%= link_to group.name.split(" ").map(&:capitalize).join(" "), group_entities_path(group) %></p>
         </div>
         <div class="transaction-amount">
           <p class="transaction-amount__text">-$<%= group.total_amount %></p>

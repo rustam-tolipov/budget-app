@@ -23,7 +23,7 @@
       <li class="item">
         <div class="transaction-name">
           <ion-icon name="<%= @group.icon %>" class="transaction-img <%= @group.icon %>"></ion-icon>
-          <p class="transaction-name__text"><%= entity.name %></p>
+          <p class="transaction-name__text"><%= entity.name.split(" ").map(&:capitalize).join(" ") %></p>
         </div>
         <div class="transaction-amount">
           <p class="transaction-amount__text">-$<%= entity.amount %></p>

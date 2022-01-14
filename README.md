@@ -2,7 +2,7 @@
 
 The Blog app is a classic example of a blog website. It's a functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-![2](https://user-images.githubusercontent.com/69011963/149573248-23a7ef1a-51c9-44b0-b7cb-034380319b51.png)
+![My project](https://user-images.githubusercontent.com/69011963/149576485-78e328ae-eb90-4010-93cb-993eaff641bb.png)
 
 ## Built With
 

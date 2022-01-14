@@ -57,7 +57,8 @@
           <%= link_to group_entities_path(group) do %>
           <ion-icon name="<%= group.icon %>" class="transaction-img <%= group.icon %>"></ion-icon>
           <% end %>
-          <p class="transaction-name__text"><%= group.name.split(" ").map(&:capitalize).join(" ") %></p>
+          <p class="transaction-name__text"><%= link_to group.name.split(" ").map(&:capitalize).join(" "), group_entities_path(group) %></p>
+              %></p>
         </div>
         <div class="transaction-amount">
           <p class="transaction-amount__text"><% if group.entities.present? %> -$<%= group.total_amount.to_s.gsub(/\d(?=(\d{3})+\.)/, '\&,') %>.00 <% else %> $ 0.00 <% end %></p>

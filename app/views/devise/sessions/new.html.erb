@@ -1,0 +1,17 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<section class="add-expenses">
+  <div class="add__amount">
+    <div class="add__title">Log in</div>
+
+    <div class="add__option category-title">
+      <ion-icon name="mail-outline"></ion-icon>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'option-text', placeholder: 'Email' %>
+    </div>
+    <div class="add__option category-title">
+      <ion-icon name="key-outline"></ion-icon>
+      <%= f.password_field :password, autocomplete: "new-password", class: 'option-text', placeholder: 'Password' %>
+    </div>
+  </div>
+  <%= f.button 'Log In', class: 'add__save' %> <% end %>
+  <%= render "devise/shared/links" %>
+</section>

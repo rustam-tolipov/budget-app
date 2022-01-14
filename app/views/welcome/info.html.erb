@@ -1,0 +1,21 @@
+<section class="welcome">
+  <h1 class="welcome__title">Budget Planner</h1>
+  <div class="welcome-image"><%= image_tag 'Wallet-bro.svg', class: 'welcome-illustration' %></div>
+  <div class="welcome-text">
+    <h2 class="welcome-text__title">Save money with us</h2>
+    <p class="welcome-text__description">Easily create budgets, and see our suggestions based on your spending.</p>
+  </div>
+</section>
+<div class="slide">
+    <% if current_user.present? %>
+  <%= link_to 'Skip', groups_path, class: 'skip__link' %>
+  <% else %>
+  <%= link_to 'Skip', new_user_session_path, class: 'skip__link' %>
+  <% end %>
+  <div class="dots">
+    <span> . </span>
+    <span> . </span>
+    <span> . </span>
+  </div>
+  <%= link_to 'Next', welcome_start_path, class: 'next__link' %>
+</div>

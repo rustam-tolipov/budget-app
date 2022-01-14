@@ -51,17 +51,20 @@
     </div>
     <ul class="transactions-list">
       <% @groups.each do |group| %>
+
       <li class="item">
         <div class="transaction-name">
+          <%= link_to group_entities_path(group) do %>
           <ion-icon name="<%= group.icon %>" class="transaction-img <%= group.icon %>"></ion-icon>
-          <p class="transaction-name__text"><%= link_to group.name.split(" ").map(&:capitalize).join(" "), group_entities_path(group) %></p>
+          <% end %>
+          <p class="transaction-name__text"><%= group.name.split(" ").map(&:capitalize).join(" ") %></p>
         </div>
         <div class="transaction-amount">
-          <p class="transaction-amount__text">-$<%= group.total_amount %></p>
+          <p class="transaction-amount__text"><% if group.entities.present? %> -$<%= group.total_amount.to_s.gsub(/\d(?=(\d{3})+\.)/, '\&,') %>.00 <% else %> $ 0.00 <% end %></p>
           <p class="transaction-amount__date"><%= group.created_at.strftime("%a") %></p>
         </div>
+        <% end %>
       </li>
-      <% end %>
     </ul>
   </div>
   <div class="options">

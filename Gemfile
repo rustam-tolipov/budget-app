@@ -76,4 +76,3 @@ gem 'cancancan'
 
 # Deploy with Heroku
 gem 'sqlite3'
-

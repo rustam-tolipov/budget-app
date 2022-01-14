@@ -1,0 +1,29 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %> 
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<section class="add-expenses">
+  <div class="add__amount">
+    <div class="add__title">Edit User</div>
+    <%= image_tag avatar_url(@user), :class => "avatar"%>
+    <div class="add__option category-title">
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <%= f.text_field :name, :placeholder => "Name", :class => "option-text" %>
+    </div>
+
+    <div class="add__option category-title">
+      <ion-icon name="image-outline"></ion-icon>
+      <%= f.file_field :avatar, :class => "option-text custom-file-input" %>
+    </div>
+    <div class="add__option category-title">
+      <ion-icon name="card-outline"></ion-icon>
+      <%= f.number_field :income, :placeholder => "Income", :class => "option-text", :min => 0, :step => 0.01 %>
+    </div>
+    <div class="add__option category-title">
+      <ion-icon name="mail-outline"></ion-icon>
+      <%= f.email_field :email, :placeholder => "Email", :class => "option-text" %>
+    </div>
+  </div>
+  <div class="add__button"><%= f.submit "Update", :class => 'add__save' %></div>
+  <br />
+  <% end %> <%= link_to "Go Back", groups_path, class: 'btn btn-primary'%>
+</section>

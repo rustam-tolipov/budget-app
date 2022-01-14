@@ -73,3 +73,7 @@ gem 'jquery-rails'
 
 # CanCan
 gem 'cancancan'
+
+# Deploy with Heroku
+gem 'sqlite3'
+

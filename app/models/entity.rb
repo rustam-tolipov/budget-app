@@ -20,8 +20,8 @@ class Entity < ApplicationRecord
   end
 
   def update_users_total_expenses
-    user = self.user
-    user.total_expenses = user.entities.sum(:amount)
-    user.save
+    current_user = self.user
+    current_user.total_expenses = current_user.entities.sum(:amount)
+    current_user.save
   end
 end

@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :require_user
+
   def index
     @groups = Group.all
     @entities = current_user.entities.where(group_id: params[:group_id]).order(created_at: :desc)

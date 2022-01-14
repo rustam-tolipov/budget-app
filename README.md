@@ -7,6 +7,14 @@ The Blog app is a classic example of a blog website. It's a functional website t
 - Ruby
 - Ruby on Rails
 
+## Live Demo
+
+[Live Demo link](https://serene-badlands-44706.herokuapp.com/)
+
+## Presentation
+
+[Video link](https://www.loom.com/share/6453fe7110804ebc9ec6760fe1bd0125)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.

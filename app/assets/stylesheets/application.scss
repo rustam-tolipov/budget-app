@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-@import 'bootstrap';
+@import "bootstrap";
 
 html {
   font-size: 62.5%;
@@ -306,7 +306,14 @@ a {
 
 .bottom__text {
   font-size: 1.5rem;
-  color: #17ead9;
+}
+
+.last {
+  color: rgb(255, 217, 0);
+}
+
+.most {
+  color: rgb(192, 160, 160);
 }
 
 .bottom__amount {
@@ -650,7 +657,7 @@ a {
   padding: 1.5rem;
   outline: none;
   background: #fff;
-  color: #777;
+  color: rgb(32, 32, 32);
 }
 
 .add__description > .option-text {
@@ -694,7 +701,7 @@ a {
   position: absolute;
   top: 1rem;
   left: 43%;
-  right: 1%;
+  right: 1rem;
   display: flex;
   justify-content: end;
   align-items: center;

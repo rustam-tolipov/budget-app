@@ -11,7 +11,7 @@
     </div>
 
     <!-- render modal -->
-    <%= render 'modal' %> <%= render 'logout' %>
+    <%= render 'modal' %> <%= render 'logout' %> <%= render 'groups' %>
 
     <!-- link to devise user edit -->
     <%= link_to edit_user_registration_path do %>
@@ -30,14 +30,14 @@
       <div class="bottom-container">
         <ion-icon name="arrow-down-outline" class="income arrow"></ion-icon>
         <div class="info">
-          <p class="bottom__text">Most</p>
+          <p class="bottom__text most">Most</p>
           <p class="bottom__amount">$ <% if current_user.entities.present? %> <%= current_user.entities.select { |entity| entity.amount == current_user.entities.max_by(&:amount).amount }.first.amount %>.00 <% else %> 0.00 <% end %></p>
         </div>
       </div>
       <div class="bottom-container">
         <ion-icon name="arrow-up-outline" class="expenses arrow"></ion-icon>
         <div class="info">
-          <p class="bottom__text">Last</p>
+          <p class="bottom__text last">Last</p>
           <p class="bottom__amount"><% if current_user.entities.present? %> $ <%= current_user.entities.select { |entity| entity.amount == current_user.entities.min_by(&:amount).amount }.first.amount %><% else %> $ 0<% end %>.00</p>
         </div>
       </div>
@@ -47,7 +47,7 @@
   <div class="tranactions">
     <div class="title">
       <p class="title__text">Transactions</p>
-      <p class="view-all">View All</p>
+      <p class="view-all" data-toggle="modal" data-target="#deleteGroup">View All</p>
     </div>
     <ul class="transactions-list">
       <% @groups.each do |group| %>

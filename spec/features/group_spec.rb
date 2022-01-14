@@ -28,4 +28,9 @@ RSpec.feature 'Groups', type: :feature do
     click_link 'Add'
     expect(page).to have_content('Add Group')
   end
+
+  scenario 'add a group show Category' do
+    click_link 'Add'
+    expect(page).to have_content('Category')
+  end
 end

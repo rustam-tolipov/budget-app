@@ -16,10 +16,10 @@ body {
 }
 
 .alert,
-.error_explanation {
+.notice {
   position: absolute;
   top: 2rem;
-  left: 0;
+  left: 10%;
   right: 0;
   z-index: 10;
   padding: 1rem;
@@ -33,8 +33,22 @@ body {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
   -ms-transition: opacity 0.2s ease-in-out;
-  animation-name: alert;
-  animation-duration: 0.1s;
+  animation: alert 1.5s;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+.alert {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
 }
 
 @keyframes alert {
@@ -191,6 +205,7 @@ a {
 }
 
 .avatar {
+  height: 2.8rem;
   width: 2.8rem;
   border-radius: 50%;
   background-color: #f7f8fd;
@@ -291,7 +306,14 @@ a {
 
 .bottom__text {
   font-size: 1.5rem;
-  color: #17ead9;
+}
+
+.last {
+  color: rgb(255, 217, 0);
+}
+
+.most {
+  color: rgb(192, 160, 160);
 }
 
 .bottom__amount {
@@ -625,7 +647,7 @@ a {
 }
 
 .add__description {
-  height: 30%;
+  height: 16%;
 }
 
 .option-text {
@@ -635,7 +657,7 @@ a {
   padding: 1.5rem;
   outline: none;
   background: #fff;
-  color: #777;
+  color: rgb(32, 32, 32);
 }
 
 .add__description > .option-text {
@@ -673,6 +695,16 @@ a {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.back__button {
+  position: absolute;
+  top: 1rem;
+  left: 43%;
+  right: 1rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .add__save {

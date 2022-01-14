@@ -4,6 +4,7 @@ class Entity < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :amount, presence: true, numericality: { greater_than: 0 }
+  validates :description, length: { maximum: 100 }
 
   after_save :update_groups_total_amount
   after_save :update_users_total_expenses
@@ -19,8 +20,8 @@ class Entity < ApplicationRecord
   end
 
   def update_users_total_expenses
-    user = self.user
-    user.total_expenses = user.entities.sum(:amount)
-    user.save
+    current_user = user
+    current_user.total_expenses = current_user.entities.sum(:amount)
+    current_user.save
   end
 end

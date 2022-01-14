@@ -26,6 +26,7 @@ class EntitiesController < ApplicationController
   def destroy
     @entity = Entity.find(params[:id])
     @entity.destroy
+    flash[:success] = 'Entity was successfully deleted.'
     redirect_to group_entities_path(@entity.group)
   end
 

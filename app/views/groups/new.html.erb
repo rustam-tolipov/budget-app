@@ -1,4 +1,12 @@
-<%= form_for(@group, :url => groups_path, :html => { :method => :post }) do |f| %>
+<% if @group.errors.any? %>
+<div class="alert alert-danger">
+  <ul>
+    <% @group.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %> <%= form_for(@group, :url => groups_path, :html => { :method => :post }) do |f| %>
 
 <section class="add-expenses">
   <div class="add__amount">
@@ -57,5 +65,7 @@
     </div>
   </div>
   <div class="add__button"><%= button_to "Save", groups_path, :method => :post, :class => "add__save" %></div>
+  <% end %> <%= link_to groups_path, class: 'back__button' do %>
+  <ion-icon name="arrow-back" class="settings-button"></ion-icon>
+  <% end %>
 </section>
-<% end %>

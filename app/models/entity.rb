@@ -4,6 +4,7 @@ class Entity < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :amount, presence: true, numericality: { greater_than: 0 }
+  validates :description, length: { maximum: 100 }
 
   after_save :update_groups_total_amount
   after_save :update_users_total_expenses

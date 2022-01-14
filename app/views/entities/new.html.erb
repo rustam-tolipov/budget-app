@@ -1,4 +1,12 @@
-<%= form_for(@entity, :url => group_entities_path, :html => { :method => :post }) do |f| %>
+<% if @entity.errors.any? %>
+<div class="alert alert-danger">
+  <ul>
+    <% @entity.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %> <%= form_for(@entity, :url => group_entities_path, :html => { :method => :post }) do |f| %>
 
 <section class="add-expenses">
   <div class="add__amount">
@@ -6,17 +14,16 @@
     <%= f.number_field :amount, :placeholder => "Amount", :class => "add__amount-input", :id => "amount", :placeholder => "$0", :min => 0, :step => 0.01 %>
     <div class="add__option category-title">
       <ion-icon name="clipboard-outline"></ion-icon>
-      <%= f.text_field :name, :placeholder => "Name", :class => "option-text" %>
+      <%= f.text_field :name, :placeholder => "Name", :class => "option-text", maxlength: 20 %>
     </div>
     <div class="add__option category-title">
-      <ion-icon name="clipboard-outline"></ion-icon>
+      <ion-icon name="calendar-outline"></ion-icon>
       <%= f.date_field :date, :class => "option-text" %>
-    </div>
-    <div class="add__option category-title add__description">
-      <ion-icon name="clipboard-outline"></ion-icon>
-      <%= f.text_area :description, :placeholder => "Description", :class => "option-text" %>
     </div>
   </div>
   <div class="add__button"><%= button_to "Save", group_entities_path, :method => :post, :class => "add__save" %></div>
+  <br />
+  <% end %> <%= link_to group_entities_path, class: 'back__button' do %>
+  <ion-icon name="arrow-back" class="settings-button"></ion-icon>
+  <% end %>
 </section>
-<% end %>

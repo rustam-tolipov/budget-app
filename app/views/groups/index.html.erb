@@ -23,7 +23,7 @@
     <div class="credit-card__top">
       <div class="credit-card__top">
         <p class="credit-card__top__text">Total Expenses</p>
-        <p class="credit-card__top__amount">$ <% if current_user.entities.present? %> <%= current_user.total_expenses.to_s.gsub(/\d(?=(\d{3})+\.)/, '\&,') %> <% else %> 0 <% end %></p>
+        <p class="credit-card__top__amount">$ <% if current_user.entities.present? %> <%= current_user.total_expenses.to_s.gsub(/\d(?=(\d{3})+\.)/, '\&,') %>.00 <% else %> 0.00 <% end %></p>
       </div>
     </div>
     <div class="credit-card__bottom">

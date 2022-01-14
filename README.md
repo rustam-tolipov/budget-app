@@ -1,24 +1,94 @@
-# README
+# Blog-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Blog app is a classic example of a blog website. It's a functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Ruby on Rails
 
-* System dependencies
+## Live Demo
 
-* Configuration
+[Live Demo link](https://serene-badlands-44706.herokuapp.com/)
 
-* Database creation
+## Presentation
 
-* Database initialization
+[Video link](https://www.loom.com/share/6453fe7110804ebc9ec6760fe1bd0125)
 
-* How to run the test suite
+## Getting Started
 
-* Services (job queues, cache servers, search engines, etc.)
+To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
+git clone https://github.com/Rustamxon7/Budget-app.git
 
-* ...
+cd Trending-Blog-app
+
+### Prerequisites
+Ruby
+Rails
+PostgresSQL
+
+### Setup
+Install gems with:
+```
+bundle install
+```
+Setup database with:
+```
+rails db:create
+rails db:migrate
+```
+
+### Usage
+Start server with:
+
+```
+rails server
+```
+
+Open http://localhost:3000/ in your browser.
+
+### Run tests
+Install npm with:
+```
+npm i
+```
+Install rspec with:
+```
+bundle install
+```
+and
+```
+rails generate rspec:install
+```
+run the test with:
+```
+rspec spec
+```
+
+## Author
+
+👤 **Rustamxon**
+
+- GitHub: [@githubhandle](https://github.com/Rustamxon7)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/rustamjon-tolipov-6a831020b)
+- Twitter: [Twitter](https://twitter.com/Rustamjon7777)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Rustamxon7/Budget-app/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse for giving me this chance
+- The design template provider [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+
+## 📝 License
+
+This project is [MIT](./LICENCE) licensed.

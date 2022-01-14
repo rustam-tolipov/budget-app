@@ -86,8 +86,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- A special thanks to Microverse for inspiring this project. I am indebted to you all at Microverse
-- A special thanks goes to all our peers at Microverse for being there for me.
+- Microverse for giving me this chance
+- The design template provider [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 ## 📝 License
 

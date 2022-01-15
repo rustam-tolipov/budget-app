@@ -1,6 +1,6 @@
-# Blog-app
+# Budget-Planner
 
-The Blog app is a classic example of a blog website. It's a functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
+The Budget Planner App is going to be helpful to track your expenses and transactions.
 
 ![My project](https://user-images.githubusercontent.com/69011963/149576485-78e328ae-eb90-4010-93cb-993eaff641bb.png)
 
@@ -23,7 +23,7 @@ To get a local copy up and running follow these simple example steps.
 
 git clone https://github.com/Rustamxon7/Budget-app.git
 
-cd Trending-Blog-app
+cd Budget-Planner-App
 
 ### Prerequisites
 Ruby
